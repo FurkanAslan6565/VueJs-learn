@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue JS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+</head>
+
+<body>
+    <h3>Vue Js Çalışmaları</h3>
+      <div id="deneme">
+      <hr>
+      <input type="text" v-on:input="basligidegistir"> 
+      <p> {{ hello() }} </p>
+      </div>
+      <script>
+        new Vue({
+            el : "#deneme",
+            data : {
+                aciklama : "Merhabalar ben bir açıklamayım",
+            }, 
+            // methods : {
+            //     basligidegistir : function(veri) {
+            //         this.aciklama = veri.target.value; 
+            //     }
+            // }
+            methods : {  
+                hello : function(){
+                    alert("Ben hello ");
+                }
+            }
+            
+        });
+      </script>
+</body>
+</html>

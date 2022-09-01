@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soru1</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="adyas">
+        <p>
+            Vue js Muazzam bir framework {{ name }} - {{ yas }}
+        <p>{{ yas * 5 }}</p>
+        <hr>
+        <p>{{randomInt(0,5)}}</p>
+        <hr>
+        <p>{{ aciklama }}</p>
+        <hr>
+        <img v-bind:src="image" alt="" height="100px">
+        <hr>
+        <input type="text" v-on:input="degistir">
+        </p>
+    </div>
+    <script>
+        new Vue({
+            el: "#adyas",
+
+            data() {
+                return {
+                    name: "Furkan Aslan",
+                    yas: 23,
+                    image: "https://www.coinkolik.com/wp-content/uploads/2020/11/kraken-bitcoin-1081x640.jpg",
+                    aciklama: "Ben input verdiğinde değişiyorum.. "
+                }
+            },
+            methods: {
+                randomInt(min, max) {
+                    return Math.floor(Math.random() * (max - min)) + min;
+                },
+                degistir(veri) {
+                    this.aciklama = veri.target.value;
+                }
+            },
+
+        })
+    </script>
+</body>
+
+</html>

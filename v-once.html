@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-once</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <h3>
+        v-js çalışmaları
+    </h3>
+    <div id="deneme">
+        <p> {{aciklama}} </p>
+        <a v-bind:href="link">Link</a>
+        <input type="text" id="deneme2" v-on:input="Denemeler">
+    </div>
+    <script>
+
+        new Vue({
+            el: "#deneme",
+            // data : {
+            //      // aciklama : "Ben bir açıklamayım",
+            //     link : "https://vuejs.org/"
+            // },
+            methods: {
+
+                hello() {
+                    alert("Ben hello");
+                },
+                //VUE 3X.0
+                //     methods : {  
+                //     hello : function(){
+                //         alert("Ben hello ");
+                //     }
+                // }
+            },
+            methods: {
+                Denemeler(veri) {
+                    this.aciklama = veri.target.value;
+                }
+            },
+            data() {
+                return {
+                    aciklama: "Ben bir açiklamayım"
+                }
+            },
+
+        })
+    </script>
+</body>
+
+</html>

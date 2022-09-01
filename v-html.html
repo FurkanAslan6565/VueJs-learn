@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+    <title>v-html</title>
+</head>
+<body>
+    <div id="deneme">
+        
+        <p v-html="bloglink">Link</p>
+    </div>
+    <script>
+        new Vue({
+            el : "#deneme",
+            data() {
+                return {
+                    aciklama : "Ben bir açıklamayım ",
+                    bloglink : '<a href="https://vuejs.org/tutorial/#step-2" > Link </a>'
+                }
+            },
+        })
+    </script>
+</body>
+</html>

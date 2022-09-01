@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+    <title>Coordinat </title>
+</head>
+<body>
+<div id="coordinat">
+    <p v-on:mousemove="coordinatguncel(1,$event)"> Coordinat - {{ x }} - {{ y }}</p>
+        <p>{{  sayi  }}</p>
+        <button v-on:click="sayi++">arttirmanuel</button>
+        <button v-on:click="sayif(1)">arttirFunction</button>
+</div>
+    <script>
+        new Vue({
+            el: "#coordinat",
+            data() {
+                return {
+                    x: 0,
+                    y: 0,
+                    sayi : 0 
+                }
+            },
+            methods: {
+                coordinatguncel(step,event) {
+                    // alert("Ben üzerimden geçtin."); 
+                    this.sayi += step; 
+                    this.x = event.clientX;
+                    this.y = event.clientY;
+                },
+                sayif(step) {
+                    this.sayi += step; 
+                }
+            },
+        })
+    </script>
+</body>
+</html>

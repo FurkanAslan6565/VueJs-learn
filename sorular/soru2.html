@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+    <title>Soru2</title>
+</head>
+<body>
+    <div id="odev">
+        <button v-on:click="Bas">Alert göster</button>
+        <input type="text" v-on:input="change">
+        <input type="text" v-on:keyup.enter="degis"> 
+        <!-- Bastığında entere alert vercek bana  -->
+
+        {{ selam }} 
+    </div>
+    <script>
+        new Vue({
+            el : "#odev",
+            data() {
+                return {
+                    selam : "selam"
+                }
+            },
+            methods: {
+                Bas() {
+                    alert("njfa");
+                    
+                },
+                change(change) {
+                    this.selam = change.target.value;
+                },
+                
+                degis(event) {
+                    alert(event.target.value); 
+                }
+         
+            }
+        })
+    </script>
+</body>
+</html>

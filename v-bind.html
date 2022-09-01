@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-bind</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+
+</head>
+<body>
+    <div id="deneme">
+        <p>{{ aciklama}} </p>
+        <a v-bind:href="link"> Genel site </a> 
+        <!-- v-bind atribute -->
+    </div>
+    <script>
+new Vue ({
+    el: "#deneme",
+    // data : {
+    //     // aciklama  : "Ben bir açıklamayım ",
+    //     link : "https://vuejs.org/"
+    // }, 
+    data() {
+        return {
+            aciklama :"Ben bir açıklamayım",
+            link : "https://vuejs.org/",
+    }}
+    },
+    
+)
+    </script>
+</body>
+</html>
